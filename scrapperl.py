@@ -10,15 +10,15 @@ for p in soup.find_all('p'):
     text = " ".join(p.text.split())
     result.append(text)
 
-print(len(result))
-for i in range(0, len(result)):
-    print(len(result[i]))
-    print(i)
+#print(len(result))
+#for i in range(0, len(result)):
+#    print(len(result[i]))
+#    print(i)
 
 text_file  = open("quotes.txt","w", encoding="utf-8")
 for i in range(0, len(result)):
     for j in range(0, len(result[i])):
         if result[i][j] == "#":
-            text_file.write(result[i])
+            text_file.write(result[i][3:])
             text_file.write("\n")
 text_file.close()
